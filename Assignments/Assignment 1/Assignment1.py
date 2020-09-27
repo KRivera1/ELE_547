@@ -1,3 +1,12 @@
+# Script: Assignment1.py
+#
+# Program description: This program utilizes the 3-axis mems gyrometer
+#					   and the 8x8 led matrix display to generate an arrow
+#					   that must be kept upright in order to score points.
+#
+# Author: Raspberry Pi Foundation
+# ELE 547 Assignment 1
+
 # IMPORT the required libraries (sense_hat, time, random) 
 from sense_hat import SenseHat
 from time import sleep
@@ -7,14 +16,12 @@ from random import choice
 sense = SenseHat()
 
 # Set up the colours (white, green, red, empty)
-
 w = (150, 150, 150)
 g = (0, 255, 0)
 r = (255, 0, 0)
 e = (0, 0, 0)
 
 # Create images for three different coloured arrows
-
 arrow = [
 e,e,e,w,w,e,e,e,
 e,e,w,w,w,w,e,e,
