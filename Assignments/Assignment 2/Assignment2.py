@@ -30,7 +30,7 @@ counter = 0				#Variable that will keep track of the number of loop cycles.
 
 #---------------------------------------Loop-----------------------------------------------
 
-while True:
+while 1:
 	
 	orient = sense.get_orientation()	#Tuple that contains the mems gyroscope data.
 	accel = sense.get_accelerometer_raw()	#Tuple that contains the mems accelerometer data.
