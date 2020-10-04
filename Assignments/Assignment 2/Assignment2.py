@@ -35,11 +35,8 @@ while True:
 	orient = sense.get_orientation()		#Tuple that contains the mems gyroscope data.
 	accel = sense.get_accelerometer_raw()	#Tuple that contains the mems accelerometer data.
 	pitch = orient["pitch"]					#Assigning the pitch data to a variable.
-	#roll = orient["roll"]
-	#yaw = orient["yaw"]
-	#xaccel = accel['x']
-	yaccel = abs(accel['y'])
-	zaccel = abs(accel['z'])
+	yaccel = abs(accel['y'])				#Assigning the absolute value Y acceleration data to a variable.
+	zaccel = abs(accel['z'])				#Assigning the absolute value Z acceleration data to a variable.
 	
 	#If statement checks to make sure that reassigns accelerator values if they are greater than 1.
 	if yaccel > 1:
@@ -59,7 +56,7 @@ while True:
 	#If statement that checks the value of the counter variable. If the counter value is 30 then the
 	#LED matrix is cleared to prevent cluttering. The counter variable is reset as well.
 	if counter == 30:
-		sense.clear()
+		sense.clear()						#Function call to clear the sense hat matrix LED.
 		counter = 0
 		
 		
