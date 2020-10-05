@@ -32,8 +32,8 @@ counter = 0				#Variable that will keep track of the number of loop cycles.
 
 while 1:
 	
-	orient = sense.get_orientation()	#Tuple that contains the mems gyroscope data.
-	accel = sense.get_accelerometer_raw()	#Tuple that contains the mems accelerometer data.
+	orient = sense.get_orientation()	#Dictionary that contains the mems gyroscope data.
+	accel = sense.get_accelerometer_raw()	#Dictionary that contains the mems accelerometer data.
 	pitch = orient["pitch"]			#Assigning the pitch data to a variable.
 	yaccel = abs(accel['y'])		#Assigning the absolute value Y acceleration data to a variable.
 	zaccel = abs(accel['z'])		#Assigning the absolute value Z acceleration data to a variable.
