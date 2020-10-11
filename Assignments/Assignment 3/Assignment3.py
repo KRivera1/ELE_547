@@ -1,19 +1,32 @@
-from flask import Flask, render_template
-from sense_hat import SenseHat
+# Script: Assignment3.py
+# Description: This is a program to practice creating a webserver
+#			   using the Raspberry Pi. The webserver contains a table
+#			   that displays the temperature and humidity sensor data
+#			   being collected. The webserver updates every 5 seconds
+#			   to display the latest data.
+#			   
+# Author: Kevin Rivera
+# Version: 1.0
+# Date: 10-09-2020
+# ELE 547 Assignment 3
 
+#---------------------------------------Libraries------------------------------------------
 
-sense = SenseHat()
-sense.clear
+from flask import Flask, render_template				#Library that provides the webserver framework
+from sense_hat import SenseHat							#Library that enables the sense hat functionality.
 
-app = Flask(__name__)
+#---------------------------------------Variables------------------------------------------
 
+sense = SenseHat()										#Object created from the sense hat library.
+sense.clear()											#Function call to clear the sense hat matrix LED.
+app = Flask(__name__)									#Object created from the flask library.
 
-@app.route('/')
+#---------------------------------------Functions------------------------------------------
+
+@app.route('/')											
 def senseData():
 	temp = str(sense.get_temperature())
 	humidity = str(sense.get_humidity())
-	#tempStr = str(temp)
-	#humStr = str(humudity)
 	Data = {'temp':temp, 'humidity':humidity}
 	return render_template('senseData.html',**Data)
 	

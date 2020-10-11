@@ -1,15 +1,15 @@
 # Script: Assignment2.py
-# Program : This is a modification of the sparkling LED program
-#			found on the Raspberry Pi Foundation website. The 
-#			accelerometer and gyroscope are used to control the
-#			LED matrix array. 30 LEDs are turned on sequentially
-#			and the frequency at which LEDs are enabled is controlled
-#			by the gyroscope pitch value. The accelerometer Y and
-#			Z values control the color of the LEDs. When the
-#			acceleration in the Z direction is maximized and the
-#			value of y is minized the LEDs become blue. In the opposite
-#			case, the LEDs become red and in between the two extremes
-#			the LEDs will be some color between red and blue.
+# Description: This is a modification of the sparkling LED program
+#		  	   found on the Raspberry Pi Foundation website. The 
+#			   accelerometer and gyroscope are used to control the
+#			   LED matrix array. 30 LEDs are turned on sequentially
+#			   and the frequency at which LEDs are enabled is controlled
+#			   by the gyroscope pitch value. The accelerometer Y and
+#			   Z values control the color of the LEDs. When the
+#			   acceleration in the Z direction is maximized and the
+#			   value of y is minized the LEDs become blue. In the opposite
+#			   case, the LEDs become red and in between the two extremes
+#			   the LEDs will be some color between red and blue.
 #
 # Author: Kevin Rivera
 # Version: 1.0
