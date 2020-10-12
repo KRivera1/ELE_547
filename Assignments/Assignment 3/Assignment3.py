@@ -2,8 +2,8 @@
 # Description: This is a program to practice creating a webserver
 #			   using the Raspberry Pi. The webserver contains a table
 #			   that displays the temperature and humidity sensor data
-#			   being collected. The webserver updates every 5 seconds
-#			   to display the latest data.
+#			   being collected from the sensehat. The webserver updates
+#			   every 5 seconds to display the latest data.
 #			   
 # Author: Kevin Rivera
 # Version: 1.0
