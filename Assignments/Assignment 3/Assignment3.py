@@ -25,10 +25,10 @@ app = Flask(__name__)									#Object created from the flask library.
 
 @app.route('/')											
 def senseData():
-	#temp = str(round(sense.get_temperature(),3))
-	#humidity = str(round(sense.get_humidity(),3))
-	temp = str(sense.get_temperature())
-	humidity = str(sense.get_humidity())
+	temp = str(round(sense.get_temperature(),3))
+	humidity = str(round(sense.get_humidity(),3))
+	#temp = str(sense.get_temperature())
+	#humidity = str(sense.get_humidity())
 	Data = {'temp':temp, 'humidity':humidity}
 	return render_template('senseData.html',**Data)
 	
