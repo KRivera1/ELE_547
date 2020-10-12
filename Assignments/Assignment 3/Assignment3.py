@@ -31,4 +31,6 @@ def senseData():
 	return render_template('senseData.html',**Data)
 	
 if __name__ == '__main__':
-	app.run(host = '192.168.0.13', debug = True)
+	app.run(host = '192.168.0.13', debug = True)		#Change the host address if necessary. Use ifconfig to 
+														#determine the local IP address. This local webserver
+														#can be visited by all devices connected to the same network.

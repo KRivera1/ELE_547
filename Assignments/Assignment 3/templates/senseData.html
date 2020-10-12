@@ -1,31 +1,28 @@
 <html>
-<head>
-<!--<link rel = "stylesheet" href = '/static/style.css' />
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>-->
-<meta http-equiv="refresh" content="5" >
-</head>
-<body>
-<!--<h1>Temperature = {{ temp }}</h1>
-<h1>Humidity = {{ humidity }}</h1>-->
-<table>
-  <tr>
-    <th>Parameter</th>
-    <th>Value</th>
-  </tr>
-  <tr>
-    <td>Temperature</td>
-    <td>{{ temp }}</td>
-  </tr>
-  <tr>
-    <td>Humidity</td>
-    <td>{{ humidity }}</td>
-  </tr>
-</table>
-<!-- <a href = "/hello/Kevin"> Hi Kevin </a> -->
-</body>
+	<head>
+		<link rel = "stylesheet" href = '/static/style.css' />     <!--The CSS style parameters are accessed-->
+		<style>
+			table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			}
+		</style>
+		<meta http-equiv="refresh" content="5" >				   <!--The webserver is set to refresh every 5 seconds-->
+	</head>
+	<body>
+		<table>													   <!--A table with the temperature and humiditity values is specified-->
+		<tr>
+			<th>Parameter</th>
+			<th>Value</th>
+		</tr>
+		<tr>
+			<td>Temperature</td>
+			<td>{{ temp }}</td>
+		</tr>
+		<tr>
+			td>Humidity</td>
+			<td>{{ humidity }}</td>
+		</tr>
+		</table>
+	</body>
 </html>
