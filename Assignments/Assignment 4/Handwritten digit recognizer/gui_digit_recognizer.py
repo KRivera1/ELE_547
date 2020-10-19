@@ -14,7 +14,7 @@
 from tkinter import *
 import tkinter as tk
 from PIL import Image
-import pyscreenshot as ImageGrab
+#import pyscreenshot as ImageGrab
 import numpy as np
 
 #model = load_model('mnist.h5')
