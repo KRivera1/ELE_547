@@ -2,7 +2,8 @@
 from tkinter import *
 import tkinter as tk
 #import win32gui
-from PIL import ImageGrab, Image
+#from PIL import ImageGrab, Image
+import pyscreenshot as ImageGrab
 import numpy as np
 
 #model = load_model('mnist.h5')
