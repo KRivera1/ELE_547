@@ -1,11 +1,11 @@
-from keras.models import load_model
+#from keras.models import load_model
 from tkinter import *
 import tkinter as tk
 #import win32gui
 from PIL import ImageGrab, Image
 import numpy as np
 
-model = load_model('mnist.h5')
+#model = load_model('mnist.h5')
 #model = load_model('mnist.sig')
 
 
@@ -19,8 +19,8 @@ def predict_digit(img):
     img = img.reshape(1,28,28,1)
     img = 1-(img/255.0)
     #predicting the class
-    res = model.predict([img])[0]
-    return np.argmax(res), max(res)
+    #res = model.predict([img])[0]
+    #return np.argmax(res), max(res)
 class App(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
