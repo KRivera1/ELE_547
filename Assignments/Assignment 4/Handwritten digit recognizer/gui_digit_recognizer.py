@@ -42,7 +42,7 @@ class App(tk.Tk):
         #im = ImageGrab.grab(rect)
         box = (self.canvas.winfo_rootx(), self.canvas.winfo_rooty(), self.canvas.winfo_rootx() + self.canvas.winfo_width(), self.canvas.winfo_rooty() + self.canvas.winfo_height())
         im = ImageGrab.grab(bbox = box)
-		digit, acc = predict_digit(im)
+	digit, acc = predict_digit(im)
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
     def draw_lines(self, event):
         self.x = event.x
