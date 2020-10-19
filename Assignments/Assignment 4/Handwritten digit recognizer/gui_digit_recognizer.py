@@ -1,11 +1,14 @@
-#from keras.models import load_model
+from keras.models import load_model
 from tkinter import *
 import tkinter as tk
 #import win32gui
 from PIL import ImageGrab, Image
 import numpy as np
-#model = load_model('mnist.h5')
+
+model = load_model('mnist.h5')
 #model = load_model('mnist.sig')
+
+
 def predict_digit(img):
     #resize image to 28x28 pixels
     img = img.resize((28,28))
@@ -16,7 +19,7 @@ def predict_digit(img):
     img = img.reshape(1,28,28,1)
     img = 1-(img/255.0)
     #predicting the class
-#    res = model.predict([img])[0]
+    res = model.predict([img])[0]
     return np.argmax(res), max(res)
 class App(tk.Tk):
     def __init__(self):
@@ -42,7 +45,7 @@ class App(tk.Tk):
         #im = ImageGrab.grab(rect)
         box = (self.canvas.winfo_rootx(), self.canvas.winfo_rooty(), self.canvas.winfo_rootx() + self.canvas.winfo_width(), self.canvas.winfo_rooty() + self.canvas.winfo_height())
         im = ImageGrab.grab(bbox = box)
-	digit, acc = predict_digit(im)
+        digit, acc = predict_digit(im)
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
     def draw_lines(self, event):
         self.x = event.x
