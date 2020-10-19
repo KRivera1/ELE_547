@@ -41,8 +41,8 @@ class App(tk.Tk):
         #rect = win32gui.GetWindowRect(HWND) # get the coordinate of the canvas
         #im = ImageGrab.grab(rect)
         box = (self.canvas.winfo_rootx(), self.canvas.winfo_rooty(), self.canvas.winfo_rootx() + self.canvas.winfo_width(), self.canvas.winfo_rooty() + self.canvas.winfo_height())
-	im = ImageGrab.grab(bbox = box)
-	digit, acc = predict_digit(im)
+		im = ImageGrab.grab(bbox = box)
+		digit, acc = predict_digit(im)
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
     def draw_lines(self, event):
         self.x = event.x
