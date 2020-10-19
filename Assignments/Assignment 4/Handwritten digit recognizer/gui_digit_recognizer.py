@@ -1,12 +1,23 @@
-#from keras.models import load_model
+# Script: Assignment4.py
+# Description: This is a program to practice creating a webserver
+#			   using the Raspberry Pi. The webserver contains a table
+#			   that displays the temperature and humidity sensor data
+#			   being collected from the sensehat. The webserver updates
+#			   every 5 seconds to display the latest data.
+#			   
+# Author: Kevin Rivera
+# Version: 1.0
+# Date: 10-16-2020
+# ELE 547 Assignment 3
+
+from keras.models import load_model
 from tkinter import *
 import tkinter as tk
-#import win32gui
-#from PIL import ImageGrab, Image
+from PIL import Image
 import pyscreenshot as ImageGrab
 import numpy as np
 
-#model = load_model('mnist.h5')
+model = load_model('mnist.h5')
 #model = load_model('mnist.sig')
 
 
@@ -20,8 +31,8 @@ def predict_digit(img):
     img = img.reshape(1,28,28,1)
     img = 1-(img/255.0)
     #predicting the class
-    #res = model.predict([img])[0]
-    #return np.argmax(res), max(res)
+    res = model.predict([img])[0]
+    return np.argmax(res), max(res)
 class App(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
@@ -41,11 +52,8 @@ class App(tk.Tk):
     def clear_all(self):
         self.canvas.delete("all")
     def classify_handwriting(self):
-        #HWND = self.canvas.winfo_id() # get the handle of the canvas
-        #rect = win32gui.GetWindowRect(HWND) # get the coordinate of the canvas
-        #im = ImageGrab.grab(rect)
         box = (self.canvas.winfo_rootx(), self.canvas.winfo_rooty(), self.canvas.winfo_rootx() + self.canvas.winfo_width(), self.canvas.winfo_rooty() + self.canvas.winfo_height())
-        im = ImageGrab.grab(bbox = box)
+        im = Image.grab(bbox = box)
         digit, acc = predict_digit(im)
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
     def draw_lines(self, event):
