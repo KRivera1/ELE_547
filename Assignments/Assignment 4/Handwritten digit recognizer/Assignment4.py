@@ -32,8 +32,8 @@ def predict_digit(img):
     img = img.reshape(1,28,28,1)
     img = 1-(img/255.0)
     #predicting the class
-    #res = model.predict([img])[0]
-    #return np.argmax(res), max(res)
+    res = model.predict([img])[0]
+    return np.argmax(res), max(res)
 class App(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
