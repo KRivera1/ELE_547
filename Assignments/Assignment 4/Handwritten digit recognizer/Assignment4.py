@@ -12,8 +12,7 @@
 # ELE 547 Assignment 3
 
 from keras.models import load_model
-#from tkinter import *
-import tkinter
+from tkinter import *
 import tkinter as tk
 from PIL import Image
 #import pyscreenshot as ImageGrab
