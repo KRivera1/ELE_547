@@ -14,8 +14,8 @@
 from keras.models import load_model
 from tkinter import *
 import tkinter as tk
-from PIL import Image
-#import pyscreenshot as ImageGrab
+#from PIL import Image
+import pyscreenshot as ImageGrab
 import numpy as np
 
 model = load_model('mnist.h5')
@@ -55,7 +55,7 @@ class App(tk.Tk):
     def classify_handwriting(self):
 		#Utilizing the tkinter built in tools to get the drawing canvas window information.
         box = (self.canvas.winfo_rootx(), self.canvas.winfo_rooty(), self.canvas.winfo_rootx() + self.canvas.winfo_width(), self.canvas.winfo_rooty() + self.canvas.winfo_height())
-        im = Image.grab(bbox = box)
+        im = ImageGrab.grab(bbox = box)
         digit, acc = predict_digit(im)
         self.label.configure(text= str(digit)+', '+ str(int(acc*100))+'%')
     def draw_lines(self, event):
