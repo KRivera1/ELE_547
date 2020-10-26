@@ -1,22 +1,8 @@
-# Script: Assignment4.py
-# Description: This is a program to practice utilizing artificial
-#			   neural networks. Hand written numerical digits between
-#			   0 - 9 can be recognized by utilizing a model derived
-#			   from a training list program. For best results, draw the
-#			   number at the center of the drawing canvas and make it
-#			   large enough to cover the majority of the drawing canvas.
-#			   The user should choose between using the ReLU or Sigmoid
-#			   model before running the program.
-#			   
-# Author: Kevin Rivera, DataFlair website
-# Version: 1.0
-# Date: 10-16-2020
-# ELE 547 Assignment 4
-
 from keras.models import load_model
 from tkinter import *
 import tkinter as tk
-import pyscreenshot as ImageGrab
+#import win32gui
+from PIL import ImageGrab, Image
 import numpy as np
 
 model = load_model('mnist.h5')
@@ -54,7 +40,9 @@ class App(tk.Tk):
     def clear_all(self):
         self.canvas.delete("all")
     def classify_handwriting(self):
-		#Utilizing the tkinter built in tools to get the drawing canvas window information.
+        #HWND = self.canvas.winfo_id() # get the handle of the canvas
+        #rect = win32gui.GetWindowRect(HWND) # get the coordinate of the canvas
+        #im = ImageGrab.grab(rect)
         box = (self.canvas.winfo_rootx(), self.canvas.winfo_rooty(), self.canvas.winfo_rootx() + self.canvas.winfo_width(), self.canvas.winfo_rooty() + self.canvas.winfo_height())
         im = ImageGrab.grab(bbox = box)
         digit, acc = predict_digit(im)
