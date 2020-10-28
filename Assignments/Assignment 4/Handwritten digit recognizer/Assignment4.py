@@ -17,6 +17,7 @@ from keras.models import load_model
 from tkinter import *
 import tkinter as tk
 import pyscreenshot as ImageGrab
+from PIL import Image
 import numpy as np
 
 model = load_model('mnist.h5')
