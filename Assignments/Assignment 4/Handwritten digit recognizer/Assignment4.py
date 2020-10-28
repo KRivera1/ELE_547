@@ -13,14 +13,14 @@
 # Date: 10-16-2020
 # ELE 547 Assignment 4
 
-from keras.models import load_model
-from tkinter import *
+from keras.models import load_model			#Library to utilize tensorflow at a higher level.
+from tkinter import *						#Graphical user interface library.
 import tkinter as tk
-import pyscreenshot as ImageGrab
-import numpy as np
+import pyscreenshot as ImageGrab			#Library to grab images to the screen for processing later on.
+import numpy as np							#Library to work with multi-dimensional arrays and math functions.
 
-model = load_model('mnist.h5')
-#model = load_model('mnist.sig')
+model = load_model('mnist.h5')				#ReLU model.
+#model = load_model('mnist.sig')			#Sigmoid model.
 
 
 def predict_digit(img):
