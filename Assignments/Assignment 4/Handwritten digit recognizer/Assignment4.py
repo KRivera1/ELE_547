@@ -19,8 +19,8 @@ import tkinter as tk
 import pyscreenshot as ImageGrab
 import numpy as np
 
-model = load_model('mnist.h5')
-#model = load_model('mnist.sig')
+#model = load_model('mnist.h5')
+model = load_model('mnist.sig')
 
 
 def predict_digit(img):
